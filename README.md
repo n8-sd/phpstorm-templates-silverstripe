@@ -6,6 +6,8 @@ This is a collection of file and live templates used for speeding up [SilverStri
 
 ## Installation Instructions
 
+#### Use the `feature/production` for developers. _( Less PHPDoc, additional variables)_
+
 Place the files into the correct folders in your configuration path and restart PHPStorm.
 
 ### Linux
@@ -52,6 +54,15 @@ private static $db = array(
 );
 ```
 
+`feature/production` expands to:
+
+```php
+private static $db = array(
+    '' => ''
+);
+```
+
+
 And `cms` expands to:
 
 ```php
@@ -65,6 +76,17 @@ public function getCMSFields()
     $fields = parent::getCMSFields();
 
 
+
+    return $fields;
+}
+```
+
+`feature/production` expands to:
+
+```php
+public function getCMSFields()
+{
+    $fields = parent::getCMSFields();
 
     return $fields;
 }
