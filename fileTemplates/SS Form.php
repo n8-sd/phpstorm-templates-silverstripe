@@ -1,6 +1,8 @@
 <?php
-#parse("PHP File Header.php")
 
+/**
+* Class ${NAME}
+*/
 class ${NAME} extends Form
 {
     /**
@@ -28,11 +30,6 @@ class ${NAME} extends Form
         parent::__construct(${DS}controller, ${DS}name, ${DS}fields, ${DS}actions, ${DS}validator);
     }
 
-    /**
-     * Create the default fields.
-     *
-     * @return FieldList
-     */
     public function getDefaultFields()
     {
         ${DS}fields = FieldList::create();
@@ -42,11 +39,6 @@ class ${NAME} extends Form
         return ${DS}fields;
     }
 
-    /**
-     * Create the default actions.
-     *
-     * @return FieldList
-     */
     public function getDefaultActions()
     {
         ${DS}actions = FieldList::create();
@@ -56,11 +48,6 @@ class ${NAME} extends Form
         return ${DS}actions;
     }
 
-    /**
-     * Create the default validator.
-     *
-     * @return Validator
-     */
     public function getDefaultValidator()
     {
         return null; // TODO: Create and configure Validator (suggest sheadawson/silverstripe-zenvalidator)

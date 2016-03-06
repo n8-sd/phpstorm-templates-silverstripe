@@ -1,7 +1,8 @@
 <?php
-#parse("PHP File Header.php")
-
+/**
+ * Class ${NAME}
+ */
 class ${NAME} extends SapphireTest
 {
-    protected static ${DS}fixture_file = '';
+    protected static ${DS}fixture_file = '$FixtureFile';
 }

@@ -1,6 +1,7 @@
 <?php
-#parse("PHP File Header.php")
-
+/**
+ * Class ${NAME}
+ */
 class ${NAME} extends DataObject
 {
 

@@ -1,29 +1,39 @@
 <?php
-#parse("PHP File Header.php")
 
+/**
+ * Class ${NAME}
+ */
 class ${NAME} extends ModelAdmin
 {
-    /**
-     * The current url segment. {@link LeftAndMain::${DS}url_segment}
-     *
-     * @config
-     * @var string
-     */
-    private static ${DS}url_segment = '';
+    private static ${DS}url_segment = '$UrlSegment';
 
-    /**
-     * The current menu title. {@link LeftAndMain::${DS}menu_title}
-     *
-     * @config
-     * @var string
-     */
-    private static ${DS}menu_title = '';
+    private static ${DS}menu_title = '$MenuTitle';
 
-    /**
-     * List of all managed {@link DataObject}s in this interface. {@link ModelAdmin::${DS}managed_models}
-     *
-     * @config
-     * @var array|string
-     */
-    private static ${DS}managed_models = array();
+    private static ${DS}managed_models = array($ManagedModels);
+
+
+
+    public function getEditForm(${DS}id = null, ${DS}fields = null)
+    {
+        ${DS}form = parent::getEditForm($id, ${DS}fields);
+
+        /** @var FieldList ${DS}fields */
+        ${DS}fields = ${DS}form->Fields();
+
+        ${DS}fields->insertBefore(HeaderField::create('$HeaderFieldName', '$HeaderTitle'), '$GridField');
+
+        // Tailor the gridfield
+        /** @var GridField ${DS}gridField */
+        ${DS}gridField = ${DS}fields->fieldByName('$GridField');
+        ${DS}gridFieldConfig = ${DS}gridField->getConfig();
+
+        ${DS}gridFieldConfig->removeComponentsByType('GridFieldExportButton');
+        ${DS}gridFieldConfig->removeComponentsByType('GridFieldPrintButton');
+        ${DS}gridFieldConfig->removeComponentsByType('GridFieldAddNewButton');
+
+        ${DS}form->setFields(${DS}fields);
+
+        return ${DS}form;
+    }
+
 }
