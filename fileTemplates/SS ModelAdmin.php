@@ -15,7 +15,7 @@ class ${NAME} extends ModelAdmin
 
     public function getEditForm(${DS}id = null, ${DS}fields = null)
     {
-        ${DS}form = parent::getEditForm($id, ${DS}fields);
+        ${DS}form = parent::getEditForm(${DS}id, ${DS}fields);
 
         /** @var FieldList ${DS}fields */
         ${DS}fields = ${DS}form->Fields();
